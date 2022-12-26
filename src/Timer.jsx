@@ -1,32 +1,38 @@
-import React from "react";
-import { useState, useEffect } from "react";
+// import React from "react";
+// import { useState, useEffect } from "react";
+// import Countdown from "react-countdown";
 
-function Timer() {
-  const [counter, setCounter] = useState(30);
-  const [start, setStart] = useState(false);
-  let timer;
-  function resend() {
-    if (start === true) {
-      console.log("timer",timer);
-      timer = setInterval(() => setCounter(counter - 1), 1000);
-    //   console.log(counter);
-    }
-  }
-  function startIt() {
-    setStart(true);
-    setCounter(counter - 1);
-  }
+// function Timer() {
+//   const [counter, setCounter] = useState(30);
+  
+//   const [time, setTime] = useState(0);
 
-  useEffect(() => {
-    // console.log("useEffect", counter);
-    resend();
-  }, [counter]);
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setTime((time) => time + 1);
+//     }, 1000);
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   }, []);
 
-  return (
-    <div className="App">
-      <button onClick={() => startIt()}>start</button>
-      <div>Countdown: {counter}</div>
-    </div>
-  );
-}
-export default Timer;
+
+//   const renderer = ({ hours, minutes, seconds, completed }) => {
+//     if (completed) {
+//       // Render a completed state
+//       return <Completionist />;
+//     } else {
+//       // Render a countdown
+//       return <span>{seconds}</span>;
+//     }
+//   };
+//   return (
+//     <div className="App">
+//       <button onClick={() => startIt()}>start</button>
+//        <div className="App">{time}</div>;
+//       {start ? <Countdown date={Date.now() + 10000} renderer={renderer}/> : <span></span>}
+      
+//     </div>
+//   );
+// }
+// export default Timer;
